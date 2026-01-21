@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-01-21T16:49:28.840Z",
+    "end": "2026-01-21T16:49:46.675Z",
+    "duration": 17835,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "33186478-5092-461c-b378-12f26af4a657",
+      "title": "",
+      "fullFile": "cypress/e2e/SysTest.cy.js",
+      "file": "cypress/e2e/SysTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4f1ce10d-2a6f-4522-a805-f9536ce79475",
+          "title": "SysTest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "register",
+              "fullTitle": "SysTest register",
+              "timedOut": null,
+              "duration": 5535,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.registerParaBank({\n  firstName: \"owis\",\n  lastName: \"bukhari\",\n  username,\n  password: \"owis12345\"\n});",
+              "err": {},
+              "uuid": "0fc64a95-aa70-4fe9-a2b0-7eff559662e4",
+              "parentUUID": "4f1ce10d-2a6f-4522-a805-f9536ce79475",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login",
+              "fullTitle": "SysTest login",
+              "timedOut": null,
+              "duration": 3579,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginParaBank({\n  username,\n  password: \"owis12345\"\n});\ncy.logoutParaBank();",
+              "err": {},
+              "uuid": "ab784ac7-f65a-4aee-8ab7-34b520671a2f",
+              "parentUUID": "4f1ce10d-2a6f-4522-a805-f9536ce79475",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "transfer funds",
+              "fullTitle": "SysTest transfer funds",
+              "timedOut": null,
+              "duration": 3947,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginParaBank({\n  username,\n  password: \"owis12345\"\n});\ncy.TransferFundsParaBank({\n  amount: \"100\"\n});\ncy.logoutParaBank();",
+              "err": {},
+              "uuid": "9b9d7783-6139-45ca-968b-f8e5f547ca66",
+              "parentUUID": "4f1ce10d-2a6f-4522-a805-f9536ce79475",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "loanRequest",
+              "fullTitle": "SysTest loanRequest",
+              "timedOut": null,
+              "duration": 3410,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginParaBank({\n  username,\n  password: \"owis12345\"\n});\ncy.loanRequest({\n  amount: \"5000\",\n  downPayment: \"500\"\n});",
+              "err": {},
+              "uuid": "6bd49cef-522c-4a23-9511-2c75757fa3c5",
+              "parentUUID": "4f1ce10d-2a6f-4522-a805-f9536ce79475",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0fc64a95-aa70-4fe9-a2b0-7eff559662e4",
+            "ab784ac7-f65a-4aee-8ab7-34b520671a2f",
+            "9b9d7783-6139-45ca-968b-f8e5f547ca66",
+            "6bd49cef-522c-4a23-9511-2c75757fa3c5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16471,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
