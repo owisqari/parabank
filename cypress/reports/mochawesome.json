@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-01-21T16:41:28.796Z",
+    "end": "2026-01-21T16:41:50.920Z",
+    "duration": 22124,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fed617c5-f15b-4afd-b6b9-5beb730ae170",
+      "title": "",
+      "fullFile": "cypress/e2e/SysTest.cy.js",
+      "file": "cypress/e2e/SysTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e223a608-52ad-441e-9f84-5fa1e6c31f02",
+          "title": "SysTest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "register",
+              "fullTitle": "SysTest register",
+              "timedOut": null,
+              "duration": 5694,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.registerParaBank({\n  firstName: \"owis\",\n  lastName: \"bukhari\",\n  username,\n  password: \"owis12345\"\n});",
+              "err": {},
+              "uuid": "c6cecb8e-f269-4f0b-b81e-31a688775673",
+              "parentUUID": "e223a608-52ad-441e-9f84-5fa1e6c31f02",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login",
+              "fullTitle": "SysTest login",
+              "timedOut": null,
+              "duration": 3599,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginParaBank({\n  username,\n  password: \"owis12345\"\n});\ncy.logoutParaBank();",
+              "err": {},
+              "uuid": "6d6e009f-3902-4f1e-a7aa-bcd107ae4a1a",
+              "parentUUID": "e223a608-52ad-441e-9f84-5fa1e6c31f02",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "transfer funds",
+              "fullTitle": "SysTest transfer funds",
+              "timedOut": null,
+              "duration": 7795,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginParaBank({\n  username,\n  password: \"owis12345\"\n});\ncy.TransferFundsParaBank({\n  amount: \"100\"\n});\ncy.logoutParaBank();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h1.title>' to be 'visible'\n\nThis element `<h1.title>` is not visible because its parent `<div#showResult>` has CSS property: `display: none`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h1.title>' to be 'visible'\n\nThis element `<h1.title>` is not visible because its parent `<div#showResult>` has CSS property: `display: none`\n    at Context.eval (webpack://parabank/./cypress/support/commands.js:74:36)\n    at wrapped (https://parabank.parasoft.com/__cypress/runner/cypress_runner.js:146042:43)",
+                "diff": null
+              },
+              "uuid": "99f0867c-322f-46c2-ad1f-e11406ad824f",
+              "parentUUID": "e223a608-52ad-441e-9f84-5fa1e6c31f02",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "loanRequest",
+              "fullTitle": "SysTest loanRequest",
+              "timedOut": null,
+              "duration": 3434,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginParaBank({\n  username,\n  password: \"owis12345\"\n});\ncy.loanRequest({\n  amount: \"5000\",\n  downPayment: \"500\"\n});",
+              "err": {},
+              "uuid": "8c3bc913-3ebd-4111-b3a4-2c379636b492",
+              "parentUUID": "e223a608-52ad-441e-9f84-5fa1e6c31f02",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c6cecb8e-f269-4f0b-b81e-31a688775673",
+            "6d6e009f-3902-4f1e-a7aa-bcd107ae4a1a",
+            "8c3bc913-3ebd-4111-b3a4-2c379636b492"
+          ],
+          "failures": [
+            "99f0867c-322f-46c2-ad1f-e11406ad824f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20522,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
