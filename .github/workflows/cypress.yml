@@ -9,29 +9,37 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2] # 👈 TWO parallel machines
+
     steps:
       # 1️⃣ Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Install dependencies
-      - name: Install Node.js dependencies
+      # 2️⃣ Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: npm ci
 
-      # 3️⃣ Run Cypress tests
+      - name: Install dependencies
+        run: npm ci
+
+      # 3️⃣ Run Cypress tests (Dashboard handles split)
       - name: Run Cypress E2E tests
         uses: cypress-io/github-action@v6
         with:
-          record: true # required for parallelization
-          parallel: true # let Cypress Dashboard split tests
-          browser: chrome # optional, default is chrome
+          record: true
+          parallel: true
+          browser: chrome
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-      # 4️⃣ Upload Mochawesome reports as artifact
+      # 4️⃣ Upload Mochawesome reports
       - name: Upload Cypress Mochawesome Reports
         uses: actions/upload-artifact@v4
         with:
