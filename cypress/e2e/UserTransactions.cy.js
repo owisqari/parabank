@@ -27,5 +27,6 @@ describe("User Transactions", () => {
       amount: "5000",
       downPayment: "500",
     });
+    cy.logoutParaBank();
   });
 });
