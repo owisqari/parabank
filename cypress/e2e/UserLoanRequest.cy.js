@@ -8,6 +8,7 @@ describe("User Loan Request", () => {
       username,
       password: "owis12345",
     });
+    cy.logoutParaBank();
   });
 
   it("loan request", () => {

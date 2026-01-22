@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy": "cypress open"
+    "cy": "cypress open",
+    "report:flow": "npm run test:UserLoanRequest && npm run test:parallel:UserTransferFund && npm run merge && npm run generate"
   },
   "author": "",
   "license": "ISC",

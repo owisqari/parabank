@@ -8,6 +8,7 @@ describe("User Transfer Fund", () => {
       username,
       password: "owis12345",
     });
+    cy.logoutParaBank();
   });
 
   it("transfer funds", () => {
