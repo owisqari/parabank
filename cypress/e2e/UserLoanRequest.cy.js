@@ -1,4 +1,4 @@
-describe("User Transactions", () => {
+describe("User Loan Request", () => {
   const username = `owis_${Date.now()}`;
 
   before(() => {
@@ -8,16 +8,6 @@ describe("User Transactions", () => {
       username,
       password: "owis12345",
     });
-  });
-
-  it("transfer funds", () => {
-    cy.loginParaBank({ username, password: "owis12345" });
-
-    cy.TransferFundsParaBank({
-      amount: "100",
-    });
-
-    cy.logoutParaBank();
   });
 
   it("loan request", () => {
